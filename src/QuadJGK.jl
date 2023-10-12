@@ -6,7 +6,7 @@ using HypergeometricFunctions: _₂F₁
 using DataStructures: heapify!, heappop!, heappush!
 import Base.Order.Reverse
 
-export OpenInterval, JacobiSpace, quadjgk
+export OpenInterval, JacobiSpace, quadjgk, quadjgk_count
 
 export AutoJGK
 

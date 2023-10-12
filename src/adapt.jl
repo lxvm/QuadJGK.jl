@@ -113,3 +113,12 @@ function quadjgk(f, s; order=7, maxevals=10^7, atol=nothing, rtol=nothing, norm=
     return do_quadjgk(f, s, order, atol, rtol, maxevals, norm, segbuf)
 end
 quadjgk(f, s::JacobiSpace...; kws...) = quadjgk(f, s; kws...)
+
+function quadjgk_count(f, args...; kws...)
+    count::Int = 0
+    i = quadjgk(args...; kws...) do x
+        count += 1
+        f(x)
+    end
+    return (i..., count)
+end
