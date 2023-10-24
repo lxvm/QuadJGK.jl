@@ -149,6 +149,11 @@ function cachedjacobi(sp::JacobiSpace{D}, n::Integer) where {D}
     return SymTridiagonal(r.dv, r.ev)
 end
 
+function jacobigauss(sp::JacobiSpace, n::Integer)
+    J = cachedjacobi(sp, n)
+    return gauss(J, unitintegral(sp))
+end
+
 function jacobikronrod(sp::JacobiSpace, n::Integer)
     J = cachedjacobi(sp, (3n+3)÷2)
     return kronrod(J, n, unitintegral(sp))

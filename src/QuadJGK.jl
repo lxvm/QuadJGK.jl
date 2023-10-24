@@ -1,6 +1,6 @@
 module QuadJGK
 
-using QuadGK: kronrod
+using QuadGK: gauss, kronrod
 using LinearAlgebra: SymTridiagonal, norm
 using HypergeometricFunctions: _₂F₁
 using DataStructures: heapify!, heappop!, heappush!
